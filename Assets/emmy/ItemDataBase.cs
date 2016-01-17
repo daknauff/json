@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿/*
+using UnityEngine;
 using System.Collections;
-using LitJson;
+
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Linq;
 public class ItemDataBase : MonoBehaviour {
 
 	private List<Item> database = new List<Item> ();
-	private JsonData itemData;
+//	private JsonData itemData;
 
 	void Start()
 	{
@@ -24,7 +25,7 @@ public class ItemDataBase : MonoBehaviour {
 
 
 		//original code from tutorial
-		itemData = JsonMapper.ToObject (File.ReadAllText(Application.dataPath + "/StreamingAssets/Items.json"));
+	//	itemData = JsonMapper.ToObject (File.ReadAllText(Application.dataPath + "/StreamingAssets/Items.json"));
 		ConstructItemDatabase();
 
 		Debug.Log (database [3].Title);
@@ -68,4 +69,4 @@ public class ItemDataBase : MonoBehaviour {
 
 
 	}
-}
+}*/

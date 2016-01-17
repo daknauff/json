@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/JSON Tests/CSharp/TestScene_CSharp.unity
-  isLoaded: 1
-  isActive: 1

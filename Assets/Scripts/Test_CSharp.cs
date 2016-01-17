@@ -5,24 +5,26 @@ using System.Collections.Generic;
 
 class Test_CSharp : MonoBehaviour
 {
-    public List<Item> database = new List<Item>();
+    private List<Item> database = new List<Item>();
     
     void Start()
     {
+        //var N = JSONNode.LoadFromFile(Application.dataPath + "/StreamingAssets/Items.json");
         var N = JSONNode.Parse((File.ReadAllText(Application.dataPath + "/StreamingAssets/Items.json")));
         Debug.Log(N.ToString());
         for (int i = 0; i < N.Count; i++)
         {
-            int id = (N["id"].AsInt);
-            string title = (N["title"].ToString());
+            int id = (N[i]["id"].AsInt);
+            string title = (N[i]["title"].Value);
+            Item newitem = new Item(id, title);
+            Debug.Log(newitem.ID + " en " + newitem.Title);
+            database.Add(newitem);
+            Debug.Log(database[i].ID + " en " + database[i].Title);
 
-            Debug.Log(id + " en " + title);
-            //database.Add(newitem);
-            
         }
     }
 
-    [SerializeField]
+    
     public class Item
 
     {
